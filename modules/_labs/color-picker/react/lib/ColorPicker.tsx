@@ -138,7 +138,7 @@ const ColorPicker = ({
 
   const onValidCustomHexChange = (validHexValue: string) => setValidHexValue(validHexValue);
 
-  const onCustomInputKeyDown = (event: React.KeyboardEvent) => {
+  const onCustomInputKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' && validHexValue) {
       onColorChange(validHexValue);
     }
@@ -162,7 +162,7 @@ const ColorPicker = ({
           <ColorInputAndLabel label={customHexInputLabel}>
             <HexColorInput
               onChange={onCustomHexChange}
-              onKeyDown={onCustomInputKeyDown}
+              onKeyPress={onCustomInputKeyPress}
               onValidColorChange={onValidCustomHexChange}
               value={customHexValue}
               showCheck={value === validHexValue || value === customHexValue}
